@@ -1,1 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicolás Agudelo - Portafolio</title>
+    <style>
+        /* --- ESTILOS GENERALES Y PALETA DE COLORES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
+        body {
+            background-color: #1e40af; /* Fondo azul vibrante basado en la imagen */
+            color: #ffffff;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 10000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 12px;
+        }
+
+        /* --- HEADER / NAVEGACIÓN --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- LAYOUT PRINCIPAL (HERO / SOBRE MÍ) --- */
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        /* Placeholder para la imagen del documento */
+        .image-placeholder {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background-color: #ffffff;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #1e40af;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border: 4px solid #000000;
+        }
+
+        .profile-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .profile-info p {
+            margin-bottom: 15px;
+            color: #f3f4f6;
+            text-align: justify;
+        }
+
+        /* --- SECCIÓN DE PROYECTOS / DISEÑO EDITORIAL --- */
+        .projects-section {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 60px;
+        }
+
+        .projects-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            border-left: 4px solid #ffffff;
+            padding-left: 10px;
+        }
+
+        /* --- SECCIÓN CONTACTO / HABLEMOS --- */
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            color: #e5e7eb;
+        }
+
+        .btn-email {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #1e40af;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .btn-email:hover {
+            background-color: #e5e7eb;
+        }
+
+        /* --- PIE DE PÁGINA Y REDES --- */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #d1d5db;
+        }
+
+        .social-links a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        .location {
+            font-style: normal;
+        }
+
+        /* Responsive para pantallas menores */
+        @media (max-width: 768px) {
+            .hero-section, .contact-section {
+                grid-template-columns: 1fr;
+            }
+            header, footer {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            nav a {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo">Nicolás Agudelo</div>
+            <nav>
+                <a href="#">Proyectos</a>
+                <a href="#">Sobre mí</a>
+                <a href="#">Contacto</a>
+            </nav>
+        </header>
+
+        <main class="hero-section">
+            <div class="image-placeholder">
+                [ Placeholder: Imagen de Personaje / Avatar ]
+            </div>
+            
+            <div class="profile-info">
+                <h2>Sobre mí</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </main>
+
+        <section class="projects-section">
+            <h3>El libro de la luna diseño editorial</h3>
+            <p>....O</p>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-info">
+                <h3>Hablemos</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div>
+                <a href="mailto:ejemplo@correo.com" class="btn-email">Envíame un correo →</a>
+            </div>
+        </section>
+
+        <footer>
+            <div class="social-links">
+                <a href="#">Linkedin</a>
+                <a href="#">Behance</a>
+                <a href="#">Instagram</a>
+            </div>
+            <div class="location">Bogotá, Colombia | Hecho con LOV</div>
+            <div>Todos los derechos reservados - 2026</div>
+        </footer>
+    </div>
+
+</body>
+</html>
