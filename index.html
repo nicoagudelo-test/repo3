@@ -1,3 +1,4 @@
+HTML
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,238 +6,290 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicolás Agudelo - Portafolio</title>
     <style>
-        /* --- ESTILOS GENERALES Y PALETA DE COLORES --- */
+        /* --- FUENTES Y CONFIGURACIÓN GENERAL --- */
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@400;600&display=swap');
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
-            background-color: #1e40af; /* Fondo azul vibrante basado en la imagen */
-            color: #ffffff;
-            line-height: 1.6;
-            padding: 20px;
+            background-color: #ffffff;
+            color: #333333;
         }
 
-        .container {
-            max-width: 10000px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 40px;
-            border-radius: 12px;
+        /* Títulos estilizados como en el diseño */
+        h1, h2, h3 {
+            font-family: 'Caveat', cursive;
+            font-weight: 700;
+            font-style: italic;
         }
 
-        /* --- HEADER / NAVEGACIÓN --- */
-        header {
+        /* --- NAVBAR --- */
+        .navbar {
+            background-color: #add8e6; /* Celeste claro del encabezado */
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            padding-bottom: 20px;
-            margin-bottom: 40px;
+            padding: 15px 10%;
         }
 
-        .logo {
-            font-size: 1.5rem;
+        .navbar-brand {
             font-weight: bold;
+            font-size: 1.2rem;
+            color: #2c3e50;
         }
 
-        nav a {
-            color: #ffffff;
+        .navbar-nav a {
             text-decoration: none;
-            margin-left: 20px;
-            font-weight: 500;
+            color: #2c3e50;
+            margin-left: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
         }
 
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        /* --- LAYOUT PRINCIPAL (HERO / SOBRE MÍ) --- */
-        .hero-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-            margin-bottom: 60px;
-        }
-
-        /* Placeholder para la imagen del documento */
-        .image-placeholder {
+        /* --- SECCIÓN HERO / CARRUSEL --- */
+        .hero-carousel {
+            position: relative;
             width: 100%;
-            aspect-ratio: 1 / 1;
+            height: 450px;
+            /* Placeholder gris oscuro emulando el fondo de la ilustración */
+            background-color: #4a5568; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        /* Indicadores de carrusel (los círculos de abajo) */
+        .carousel-dots {
+            position: absolute;
+            bottom: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+        }
+
+        .dot.active {
             background-color: #ffffff;
-            border-radius: 8px;
+        }
+
+        /* --- SECCIÓN SOBRE MÍ --- */
+        .about-section {
+            background-color: #f7fafc; /* Fondo sutilmente frío/claro */
+            padding: 80px 15%;
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image-placeholder {
+            width: 250px;
+            height: 250px;
+            background-color: #1e40af; /* Azul del avatar */
+            flex-shrink: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #1e40af;
+            color: white;
             font-weight: bold;
-            font-size: 1.2rem;
-            border: 4px solid #000000;
+            text-align: center;
+            padding: 10px;
         }
 
-        .profile-info h2 {
-            font-size: 2.5rem;
+        .about-content h2 {
+            font-size: 2.8rem;
             margin-bottom: 20px;
+            color: #2d3748;
         }
 
-        .profile-info p {
+        .about-content p {
+            font-size: 0.95rem;
+            color: #4a5568;
+            line-height: 1.7;
             margin-bottom: 15px;
-            color: #f3f4f6;
-            text-align: justify;
         }
 
-        /* --- SECCIÓN DE PROYECTOS / DISEÑO EDITORIAL --- */
-        .projects-section {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 30px;
-            border-radius: 8px;
-            margin-bottom: 60px;
-        }
-
-        .projects-section h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            border-left: 4px solid #ffffff;
-            padding-left: 10px;
-        }
-
-        /* --- SECCIÓN CONTACTO / HABLEMOS --- */
+        /* --- SECCIÓN HABLEMOS (CONTACTO) --- */
         .contact-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            padding-top: 40px;
-            margin-bottom: 40px;
-        }
-
-        .contact-info h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .contact-info p {
-            margin-bottom: 15px;
-            color: #e5e7eb;
-        }
-
-        .btn-email {
-            display: inline-block;
-            background-color: #ffffff;
-            color: #1e40af;
-            padding: 12px 24px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            margin-top: 10px;
-            transition: background 0.3s;
-        }
-
-        .btn-email:hover {
-            background-color: #e5e7eb;
-        }
-
-        /* --- PIE DE PÁGINA Y REDES --- */
-        footer {
+            background-color: #433e56; /* Tono púrpura/gris oscuro del bloque inferior */
+            color: #ffffff;
+            padding: 80px 15%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            color: #d1d5db;
+            gap: 50px;
         }
 
-        .social-links a {
+        /* Redes Sociales a la izquierda */
+        .social-block {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .social-item {
+            text-align: center;
             color: #ffffff;
             text-decoration: none;
-            margin-right: 15px;
         }
 
-        .social-links a:hover {
-            text-decoration: underline;
+        .social-icon-placeholder {
+            width: 70px;
+            height: 70px;
+            background-color: #929bb0; /* Color grisáceo de los círculos */
+            border-radius: 50%;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: #433e56;
         }
 
-        .location {
-            font-style: normal;
+        /* Texto y botón de contacto a la derecha */
+        .contact-content {
+            flex-grow: 1;
+            max-width: 550px;
         }
 
-        /* Responsive para pantallas menores */
+        .contact-content h3 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-content p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #e2e8f0;
+        }
+
+        .btn-contact {
+            display: inline-block;
+            background-color: #add8e6; /* Botón celeste como el navbar */
+            color: #433e56;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .btn-contact:hover {
+            background-color: #9cd2e6;
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            background-color: #8c96a8; /* Gris del footer */
+            color: #ffffff;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+        }
+
+        /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
-            .hero-section, .contact-section {
-                grid-template-columns: 1fr;
-            }
-            header, footer {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-            nav a {
-                margin: 0 10px;
-            }
+            .navbar { flex-direction: column; gap: 10px; }
+            .about-section, .contact-section { flex-direction: column; text-align: center; padding: 40px 5%; }
+            .contact-section { flex-direction: column-reverse; }
+            .social-block { margin-bottom: 30px; }
+            .footer { flex-direction: column; gap: 10px; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <div class="logo">Nicolás Agudelo</div>
-            <nav>
-                <a href="#">Proyectos</a>
-                <a href="#">Sobre mí</a>
-                <a href="#">Contacto</a>
-            </nav>
-        </header>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-brand">Nicolás Agudelo</div>
+        <div class="navbar-nav">
+            <a href="#">Proyectos</a>
+            <a href="#">Sobre mí</a>
+            <a href="#">Contacto</a>
+        </div>
+    </nav>
 
-        <main class="hero-section">
-            <div class="image-placeholder">
-                [ Placeholder: Imagen de Personaje / Avatar ]
-            </div>
-            
-            <div class="profile-info">
-                <h2>Sobre mí</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-        </main>
+    <!-- HERO / SECCIÓN DESTACADA -->
+    <section class="hero-carousel">
+        <!-- El texto está centrado e integrado encima de la ilustración -->
+        <h1 class="hero-title">El libro de la luna - diseño editorial</h1>
+        
+        <div class="carousel-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
 
-        <section class="projects-section">
-            <h3>El libro de la luna diseño editorial</h3>
-            <p>....O</p>
-        </section>
+    <!-- SOBRE MÍ -->
+    <section class="about-section">
+        <!-- Placeholder para la figura de Ryu / Avatar -->
+        <div class="about-image-placeholder">
+            [ Placeholder: Ilustración Avatar ]
+        </div>
+        <div class="about-content">
+            <h2>Sobre mí</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </section>
 
-        <section class="contact-section">
-            <div class="contact-info">
-                <h3>Hablemos</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-            <div>
-                <a href="mailto:ejemplo@correo.com" class="btn-email">Envíame un correo →</a>
-            </div>
-        </section>
+    <!-- HABLEMOS / CONTACTO -->
+    <section class="contact-section">
+        <!-- Bloque Redes Sociales Izquierda -->
+        <div class="social-block">
+            <a href="#" class="social-item">
+                <div class="social-icon-placeholder">Bē</div>
+                <span>Linkedin</span>
+            </a>
+            <a href="#" class="social-item">
+                <div class="social-icon-placeholder">in</div>
+                <span>Behance</span>
+            </a>
+            <a href="#" class="social-item">
+                <div class="social-icon-placeholder">📷</div>
+                <span>Instagram</span>
+            </a>
+        </div>
 
-        <footer>
-            <div class="social-links">
-                <a href="#">Linkedin</a>
-                <a href="#">Behance</a>
-                <a href="#">Instagram</a>
-            </div>
-            <div class="location">Bogotá, Colombia | Hecho con LOV</div>
-            <div>Todos los derechos reservados - 2026</div>
-        </footer>
-    </div>
+        <!-- Contenido Derecha -->
+        <div class="contact-content">
+            <h3>Hablemos</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <a href="#" class="btn-contact">Envíame un correo →</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div>Todos los derechos reservados - 2026</div>
+        <div>Bogotá, Colombia // Hecho con LOV</div>
+    </footer>
 
 </body>
 </html>
